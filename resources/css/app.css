@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .text-outline {
+        text-shadow: -1px -1px 0 #FFD300, 1px -1px 0 #FFD300, -1px 1px 0 #FFD300, 1px 1px 0 #FFD300;
+    }
+}
+
+body {
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.landing--header-large {
+    color: #313A57;
+    text-shadow: -1px -1px 0 #FFD300, 1px -1px 0 #FFD300, -1px 1px 0 #FFD300, 1px 1px 0 #FFD300, -2px -2px 0 #FA1708, 2px -2px 0 #FA1708, -2px 2px 0 #FA1708, 2px 2px 0 #FA1708;
+}
+
+.latest__slide {
+    background-position: center center;
+}
