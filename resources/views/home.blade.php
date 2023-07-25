@@ -16,13 +16,17 @@
             {{--            </div>--}}
 {{--        </div>--}}
         <div class="carousel">
-            <x-slide image="slide_1.jpg">
-                <h2 class="text-outline p-3 rounded-xl uppercase text-center text-xl md:text-4xl mt-10 backdrop-blur-xl">Dragons runners-up in Cromer YFC Tournament</h2>
-                <a href="#" class="py-3 px-4 bg-blue-500 text-white uppercase rounded-3xl mb-10">Read More</a>
-            </x-slide>
-            <x-slide image="slide_2.jpg"/>
-            <x-slide image="slide_3.jpg"/>
-            <x-slide image="slide_4.jpg"/>
+            @foreach($news as $item)
+                <x-slide :image="$item->image_url" :slug="$item->headline">{{ $item->headline }}</x-slide>
+            @endforeach
+{{--            <x-slide image="1507_trophy.jpeg" slug="#">--}}
+{{--                Dragons runners-up in Cromer YFC Tournament--}}
+{{--            </x-slide>--}}
+{{--            <x-slide image="newKitLandscape.png" slug="#">--}}
+{{--                2023/24 Kit Arrives--}}
+{{--            </x-slide>--}}
+{{--            <x-slide image="slide_3.jpg" slug="#"/>--}}
+{{--            <x-slide image="slide_4.jpg" slug="#"/>--}}
 
         </div>
     </div>

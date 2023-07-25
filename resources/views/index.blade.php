@@ -15,7 +15,7 @@
                 </div>
             </div>
             @auth()
-                <a href="{{ url('/dashboard') }}" class="mt-10 bg-blue-500 rounded-3xl py-3 px-8 text-white hover:bg-blue-300 hover:text-black uppercase">Enter main site</a>
+                <a href="{{ url('/home') }}" class="mt-10 bg-blue-500 rounded-3xl py-3 px-8 text-white hover:bg-blue-300 hover:text-black uppercase">Enter main site</a>
             @else
                 <a href="{{ route('login') }}" class="mt-10 bg-blue-500 rounded-3xl py-3 px-8 text-white hover:bg-blue-300 hover:text-black uppercase">Sign In</a>
             @endauth

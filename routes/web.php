@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
+use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +21,17 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', function () {
+    return view('home', [
+        'news' => News::latest()->take(4)->get()
+    ]);
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+    Route::get('/news/add', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,6 +39,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('sliders', [SliderController::class, 'index'])->name('sliders');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

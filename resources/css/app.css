@@ -20,3 +20,8 @@ body {
 .latest__slide {
     background-position: center center;
 }
+
+.ck-editor__editable {
+    min-height: 400px;
+    max-height: 50vh;
+}
