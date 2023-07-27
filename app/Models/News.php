@@ -13,8 +13,9 @@ class News extends Model
     protected $fillable = [
         'headline',
         'body',
-        'image-url',
-        'user-id'
+        'slug',
+        'image_url',
+        'user_id'
     ];
 
     protected $with = [

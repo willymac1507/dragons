@@ -21,13 +21,21 @@ $(function() {
         speed: 600
     });
 
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .then( editor => {
-            console.log( editor );
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
+    if ($('#editor').exists) {
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+
+    $('#headline').focusout( () => {
+        let slugIn = $('#headline').val();
+        let slugOut = slugIn.replace(/\s+/g, '-').toLowerCase();
+        $('#slug').val(slugOut);
+    });
 
 })

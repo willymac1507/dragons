@@ -18,12 +18,10 @@ class NewsFactory extends Factory
     public function definition(): array
     {
         $rawBody = $this->faker->paragraphs(8);
-        $excerpt = $rawBody[0].'...';
         $slug = $this->faker->slug;
         return [
             'slug' => $slug,
             'headline' => $this->faker->sentence,
-            'excerpt' => $excerpt,
             'body' => '<p>' . implode('</p><p>', $rawBody) . '</p>',
             'image_url' => 'https://loremflickr.com/640/480' . '?slug=' . $slug,
             'user_id' => User::factory(),

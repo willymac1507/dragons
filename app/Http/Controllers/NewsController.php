@@ -15,6 +15,12 @@ class NewsController extends Controller
         ]);
     }
 
+    public function show(News $news)
+    {
+        return view('news.show', [
+            'item' => $news
+        ]);
+    }
     public function create()
     {
         return view('news.create');
@@ -22,7 +28,23 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $path = $request->file('file-upload')->store('images');
+        $path = $request->file('file-upload')->store('privateImages');
+
+        request()->validate([
+            'headline' => 'required',
+            'body' => 'required'
+        ]);
+
+        News::create([
+            'user_id' => auth()->id(),
+            'headline' => request('headline'),
+            'slug' => request('slug'),
+            'body' => request('body'),
+            'image_url' => $path
+
+        ]);
+
+        return back();
 
     }
 }

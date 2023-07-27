@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->text('headline');
             $table->text('slug');
-            $table->text('excerpt');
             $table->text('body');
             $table->string('image_url');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
