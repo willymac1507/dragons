@@ -2,6 +2,7 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import {Dropzone} from "dropzone";
 
 window.Alpine = Alpine;
 
@@ -21,15 +22,15 @@ $(function() {
         speed: 600
     });
 
-    if ($('#editor').exists) {
+    console.log($(location).attr('href'));
+
+    if ($(location).attr('href').includes('news/item/add')) {
         ClassicEditor
             .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
             .catch(error => {
                 console.error(error);
             });
+
     }
 
     $('#headline').focusout( () => {
@@ -37,5 +38,7 @@ $(function() {
         let slugOut = slugIn.replace(/\s+/g, '-').toLowerCase();
         $('#slug').val(slugOut);
     });
+
+
 
 })

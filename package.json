@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^38.1.1",
+        "dropzone": "^6.0.0-beta.2",
         "jquery": "^3.7.0",
         "slick-carousel": "^1.8.1",
         "tw-elements": "^1.0.0-beta2"

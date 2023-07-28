@@ -31,7 +31,7 @@ Route::get('/home', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/news/{news:slug}', [NewsController::class, 'show'])->name('news.show');
-    Route::get('/news/add', [NewsController::class, 'create'])->name('news.create');
+    Route::get('/news/item/add', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news', [NewsController::class, 'store'])->name('news.store');
 });
 

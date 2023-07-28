@@ -4,7 +4,7 @@
     {{ $attributes->class(['transition-colors duration-300 hover:bg-gray-300 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-6 px-5 lg:flex">
         <div class="flex-1 lg:mr-8">
-            <img src="{{ $item->image_url }}" alt="News item illustration" class="rounded-xl">
+            <img src="{{ $item->image_url }}" alt="News item illustration" class="object-cover rounded-xl">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
