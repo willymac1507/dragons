@@ -28,12 +28,16 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $path = $request->file('file-upload')->store('privateImages');
-
         request()->validate([
+            'coverPhoto' => ['mimes:jpeg,png,webp', 'dimensions:ratio=64/48'],
             'headline' => 'required',
             'body' => 'required'
+        ],
+        [
+            'coverPhoto.dimensions' => 'The image must be 64/48 ratio',
         ]);
+
+        $path = $request->file('coverPhoto')->store('privateImages');
 
         News::create([
             'user_id' => auth()->id(),

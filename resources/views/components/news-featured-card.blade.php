@@ -24,9 +24,9 @@
                 </div>
             </header>
 
-            <div class="text-sm my-2">
+            <div class="text-lg my-2">
                 <p>
-                    {{ $item->excerpt }}
+                    {{ strip_tags(Str::of($item->body)->limit(150)) }}
                 </p>
 
             </div>
@@ -34,7 +34,7 @@
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     {{-- TODO --}}
-                    <img class="rounded-xl" width="75" height="75" src="https://i.pravatar.cc/75?u={{ $item->author->id }}" alt="avatar">
+                    <img class="rounded-xl" width="75" height="75" src="{{ $item->author->avatar_url }}?u={{ $item->author->id }}" alt="avatar">
                     <div class="ml-3">
                         <a href="/?author={{ $item->author->name }}">
                             <h5 class="font-bold">

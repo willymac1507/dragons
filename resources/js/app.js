@@ -39,6 +39,14 @@ $(function() {
         $('#slug').val(slugOut);
     });
 
+    $('#newsForm').on('submit', (e) => {
+        let textArea = $('.ck-editor__editable>p>br').attr('data-cke-filler');
+        if (textArea) {
+            e.preventDefault();
+        }
+        console.log(textArea);
+    })
+
 
 
 })

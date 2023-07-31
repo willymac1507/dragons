@@ -11,7 +11,7 @@
                     </p>
 
                     <div class="flex items-center lg:justify-center text-sm mt-4">
-                        <img src="https://i.pravatar.cc/75?u={{ $item->author->id }}" alt="avatar">
+                        <img src="{{ $item->author->avatar_url }}?u={{ $item->author->id }}" alt="avatar">
                         <div class="ml-3 text-left">
                             <a href="/?author={{ $item->author->username }}"
                                class="font-bold">{{ $item->author->name }}</a>
