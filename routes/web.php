@@ -4,6 +4,7 @@ use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\TeamController;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/news/{news:slug}', [NewsController::class, 'show'])->name('news.show');
     Route::get('/news/item/add', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+
+    Route::get('/team', [TeamController::class, 'index'])->name('team.index');
 });
 
 Route::middleware('auth')->group(function () {

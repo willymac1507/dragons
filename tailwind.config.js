@@ -13,6 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                display: ['Anybody', ...defaultTheme.fontFamily.sans]
             },
 
             screens: {

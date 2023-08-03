@@ -35,7 +35,7 @@
             <footer class="flex justify-between items-center">
                 <div class="flex items-center text-sm">
                     {{-- TODO --}}
-                    <img class="rounded-xl" width="75" height="75"
+                    <img class="rounded-xl w-[50px] h-[50px] lg:w-[75px] lg:h-[75px]"
                          src="{{ $item->author->avatar_url }}?u={{ $item->author->id }}" alt="avatar">
                     <div class="ml-3">
                         <a href="/?author={{ $item->author->name }}">
@@ -46,8 +46,8 @@
 
                 <div>
                     <a href="news/{{ $item->slug }}"
-                       class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
-                    >Read More</a>
+                       class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-4"
+                    >More</a>
                 </div>
             </footer>
         </div>

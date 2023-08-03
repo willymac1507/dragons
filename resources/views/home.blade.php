@@ -17,7 +17,7 @@
 {{--        </div>--}}
         <div class="carousel">
             @foreach($news as $item)
-                <x-slide :image="$item->image_url" :slug="$item->headline">{{ $item->headline }}</x-slide>
+                <x-slide :image="$item->image_url" :slug="$item->slug">{{ $item->headline }}</x-slide>
             @endforeach
 {{--            <x-slide image="1507_trophy.jpeg" slug="#">--}}
 {{--                Dragons runners-up in Cromer YFC Tournament--}}

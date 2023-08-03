@@ -15,8 +15,13 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+
                     <x-nav-link :href="route('news.index')" :active="request()->routeIs('news.index')">
                         {{ __('News') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.index')">
+                        {{ __('Team') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -80,6 +85,10 @@
 
             <x-responsive-nav-link :href="route('news.index')" :active="request()->routeIs('news.index')">
                 {{ __('News') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('team.index')" :active="request()->routeIs('team.index')">
+                {{ __('Team') }}
             </x-responsive-nav-link>
         </div>
 

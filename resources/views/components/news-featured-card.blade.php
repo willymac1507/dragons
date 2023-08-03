@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="hidden lg:block">
+                <div class="hidden md:block">
                     <a href="news/{{ $item->slug }}"
                        class="transition-colors duration-300 text-xs font-semibold text-white bg-blue-500 hover:bg-blue-300 rounded-full py-2 px-8"
                     >Read More</a>
